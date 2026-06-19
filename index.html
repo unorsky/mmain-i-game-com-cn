@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 杂志专题</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafaf9;
+      font-family: 'Georgia', 'Times New Roman', 'Songti SC', 'SimSun', serif;
+      color: #1d1d1b;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 3.2rem 1.8rem 5rem;
+    }
+
+    /* hero 横幅 */
+    .hero {
+      margin-bottom: 3.8rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #d0cdc7;
+    }
+
+    .hero-title {
+      font-size: 2.8rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #2a2a28;
+    }
+
+    .hero-sub {
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      color: #77756e;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .hero-sub span {
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
+
+    /* 背景说明卡片 */
+    .note-card {
+      background: #f3f1ed;
+      padding: 1.8rem 2rem;
+      margin-bottom: 3rem;
+      border-radius: 0;
+      border-left: 3px solid #b8a99a;
+      font-size: 0.98rem;
+    }
+
+    .note-card p {
+      margin-bottom: 0.6rem;
+    }
+
+    .note-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .note-card a {
+      color: #3d3b37;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      transition: color 0.15s;
+    }
+
+    .note-card a:hover {
+      color: #a0826b;
+    }
+
+    /* 正文标题层级 */
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 450;
+      margin-top: 2.8rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.01em;
+      border-bottom: 1px dotted #cbc8c0;
+      padding-bottom: 0.4rem;
+    }
+
+    .section-title:first-of-type {
+      margin-top: 0;
+    }
+
+    .subsection-title {
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-top: 2rem;
+      margin-bottom: 0.6rem;
+      color: #3f3d38;
+    }
+
+    p {
+      margin-bottom: 1.3rem;
+      font-size: 1rem;
+      text-align: left;
+      word-break: break-word;
+    }
+
+    /* 引用式强调 */
+    .pull-quote {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #5f5b52;
+      padding: 0.8rem 1.5rem;
+      margin: 2rem 0;
+      border-left: 2px solid #c1b5a6;
+      background: #f7f6f3;
+    }
+
+    /* 简洁的列表 */
+    .feature-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 1.8rem 0 2rem;
+    }
+
+    .feature-list li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.7rem;
+      font-size: 0.98rem;
+    }
+
+    .feature-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #9e9184;
+    }
+
+    /* 页尾提示 */
+    .footer-note {
+      margin-top: 4.2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e0ddd5;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #7d7a72;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .footer-note a {
+      color: #3f3d38;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.15s;
+    }
+
+    .footer-note a:hover {
+      color: #a0826b;
+    }
+
+    .footer-tag {
+      display: inline-block;
+      margin-top: 0.8rem;
+      padding: 0.3rem 1.2rem;
+      border: 1px solid #cbc8c0;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      color: #5f5b52;
+    }
+
+    /* 响应式 */
+    @media (max-width: 560px) {
+      .container {
+        padding: 2rem 1.2rem 4rem;
+      }
+      .hero-title {
+        font-size: 2rem;
+      }
+      .note-card {
+        padding: 1.2rem 1.2rem;
+      }
+      .section-title {
+        font-size: 1.3rem;
+      }
+      .pull-quote {
+        margin: 1.5rem 0;
+        padding: 0.6rem 1rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero-title {
+        font-size: 1.6rem;
+      }
+      body {
+        line-height: 1.7;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- hero 横幅 -->
+    <header class="hero">
+      <h1 class="hero-title">爱游戏 · 再访笔记</h1>
+      <div class="hero-sub">
+        <span>✦ 杂志专题</span>
+        <span>· 持久关注</span>
+        <span>· 2025</span>
+      </div>
+    </header>
+
+    <!-- 背景说明 -->
+    <div class="note-card">
+      <p>这并非一个喧嚣的入口，而是一处安静的内容腹地。本站以游戏文化、设计拆解与跨媒介叙事为经纬，持续更新值得沉淀的阅读材料。无论你是初次留意，还是曾匆匆路过，<a href="https://mmain-i-game.com.cn">爱游戏</a>都保留着同一份克制的邀请——不设弹窗，不追热点，只提供经得起反复翻阅的文本。</p>
+      <p>页面结构有意保持窄幅与留白，让注意力回归文字本身。以下三段从「再访」「收藏」「持续关注」三个维度展开，彼此承接，指向同一个朴素的建议：给它一个书签位。</p>
+    </div>
+
+    <!-- 第一段：再访的价值 -->
+    <h2 class="section-title">再访 · 第二次阅读的密度</h2>
+    <p>许多页面在第一次浏览时便被关掉，但优秀的专题值得第二次打开。爱游戏的每一篇内容都经过编辑式的梳理，从早期主机文化札记到独立游戏开发访谈，信息层级清晰，引述有据。当你时隔数周再次点开同一篇文章，往往会发现之前被忽略的段落——那些关于关卡节奏或叙事留白的讨论，在熟悉背景后显得更有分量。</p>
+    <p>这也是我们建议读者将 <a href="https://mmain-i-game.com.cn">爱游戏</a> 加入浏览器书签栏的原因：它不是一次性的新闻快讯，而是一册不断生长的参考读物。再访不是重复，而是沿着已有的标记走得更深。</p>
+
+    <!-- 第二段：收藏与个人索引 -->
+    <h2 class="section-title">收藏 · 建立你自己的索引</h2>
+    <p>当信息流变得越来越快，收藏行为几乎成了一种本能——但真正有价值的收藏夹，应该容纳那些你愿意二次消费的内容。爱游戏的文章倾向于提供可复用的观察框架：比如某篇关于“有限资源下的叙事效率”的笔记，或者关于像素美学中色彩限制的案例分析。这些内容不会过时，反而会随着你经验的积累而显现出新的解释维度。</p>
+
+    <div class="pull-quote">
+      “收藏不是终点，而是阅读的起点。把网站留在触手可及的地方，等于给自己留了一条随时折返的路径。”
+    </div>
+
+    <p>你可以将爱游戏视作一个数字书架上的固定隔层。不必每天查看，但当你想探讨某个游戏机制的源流，或寻找一段旁征博引的评论时，它应当就在那里。</p>
+
+    <!-- 第三段：持续关注的节奏 -->
+    <h2 class="section-title">持续关注 · 慢频率的默契</h2>
+    <p>我们不鼓励刷新焦虑。爱游戏的更新节奏偏慢，有时一周仅有一篇长文，有时半个月才出现一则短评。这种频率并非疏懒，而是刻意为之——每篇内容从选题到成稿都经过斟酌，引用来源可查，观点不迎合算法。持续关注不是要你时时惦记，而是知道有一个地方保持着稳定的输出节奏，不会突然偏离方向。</p>
+
+    <ul class="feature-list">
+      <li>不定期发布专题文章、游戏田野笔记与翻译稿</li>
+      <li>所有内容均保留原始版本，不随热点修改立场</li>
+      <li>无广告、无推送、无会员墙——纯粹的阅读环境</li>
+    </ul>
+
+    <p>如果你认同这种慢内容的价值，那么把 <a href="https://mmain-i-game.com.cn">爱游戏</a> 放入常驻书签或阅读器订阅源，就是一个自然而然的动作。不需要反复输入地址，也不必担心错过什么——当一篇新文章出现时，你会知道，它经过了足够久的准备。</p>
+
+    <!-- 页尾访问提示 -->
+    <footer class="footer-note">
+      <p>每一个再次打开的读者，都是这个站点的建设者。</p>
+      <p style="margin-bottom: 0.8rem;">保持安静，保持重读。</p>
+      <a href="https://mmain-i-game.com.cn">爱游戏</a>
+      <div class="footer-tag">书签 · 常访</div>
+    </footer>
+
+  </div>
+</body>
+</html>
