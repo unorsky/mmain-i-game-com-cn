@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>九游体育 · 站点介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #fafaf9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1a1a2e;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    /* 顶部导航 */
+    .top-nav {
+      padding: 20px 0;
+      border-bottom: 1px solid #eae8e4;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-weight: 600;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+      color: #1a1a2e;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.95rem;
+      color: #555;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #1a1a2e;
+    }
+    /* hero 区域 */
+    .hero {
+      padding: 64px 0 48px;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 550;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: #3e3e4a;
+      max-width: 600px;
+    }
+    /* 介绍段落 */
+    .intro-section {
+      padding: 10px 0 30px;
+    }
+    .intro-section p {
+      margin-bottom: 18px;
+      font-size: 1rem;
+      color: #2a2a3a;
+    }
+    /* 三个场景模块 */
+    .scenes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      padding: 36px 0 48px;
+    }
+    .scene-card {
+      flex: 1 1 180px;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 28px 22px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.03);
+      border: 1px solid #efede9;
+      transition: box-shadow 0.2s;
+    }
+    .scene-card:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+    }
+    .scene-card h3 {
+      font-size: 1.1rem;
+      font-weight: 550;
+      margin-bottom: 12px;
+      letter-spacing: 0.01em;
+    }
+    .scene-card p {
+      font-size: 0.95rem;
+      color: #3e3e4e;
+    }
+    .scene-card .num {
+      display: inline-block;
+      font-size: 0.8rem;
+      color: #8b8b9c;
+      margin-bottom: 8px;
+      font-weight: 400;
+      letter-spacing: 0.4px;
+    }
+    /* 常见说明 / FAQ 摘要 */
+    .faq-summary {
+      padding: 20px 0 40px;
+      border-top: 1px solid #eae8e4;
+    }
+    .faq-summary h2 {
+      font-size: 1.3rem;
+      font-weight: 540;
+      margin: 28px 0 16px;
+    }
+    .faq-item {
+      margin-bottom: 20px;
+    }
+    .faq-item h4 {
+      font-size: 1rem;
+      font-weight: 520;
+      margin-bottom: 4px;
+      color: #1a1a2e;
+    }
+    .faq-item p {
+      font-size: 0.95rem;
+      color: #4a4a5a;
+    }
+    .site-link {
+      margin: 24px 0 16px;
+      padding: 16px 0;
+    }
+    .site-link a {
+      color: #1a1a2e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 450;
+    }
+    .site-link a:hover {
+      color: #4a4a5a;
+    }
+    /* footer */
+    .footer {
+      padding: 32px 0 40px;
+      border-top: 1px solid #eae8e4;
+      font-size: 0.85rem;
+      color: #7a7a8a;
+      text-align: center;
+    }
+    @media (max-width: 640px) {
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .scenes {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <nav class="top-nav">
+      <a href="/" class="logo">九游体育 · 站点</a>
+      <div class="nav-links">
+        <a href="#intro">介绍</a>
+        <a href="#scenes">场景</a>
+        <a href="#faq">说明</a>
+      </div>
+    </nav>
+
+    <!-- hero 核心介绍 -->
+    <div class="hero">
+      <h1>关于九游体育</h1>
+      <p>一个以信息展示与内容组织为基础的站点，持续提供结构清晰、风格克制的参考页面。</p>
+    </div>
+
+    <!-- 介绍段落：站点介绍与可信说明 -->
+    <section class="intro-section" id="intro">
+      <p><strong>九游体育</strong> 并非一个商业化平台，而是围绕特定主题构建的轻量信息页面。站点的设计逻辑强调低冗余、高可读性，不依赖外部资源，所有样式与结构均内嵌于单一文档中。这种呈现方式便于快速部署、归档与分享。</p>
+      <p>在内容可信方面，本站所有文字均基于公开可查的信息进行组织，不包含主观预测、收益承诺或诱导性表述。页面中涉及的任何说明、模块或场景描述，均以帮助访问者理解站点用途为出发点，而非营销或转化目的。</p>
+      <p>如需了解更完整的背景，可直接访问 <a href="https://root-9ysports.com">九游体育</a> 查看详情。该链接为站点根目录，不附加任何追踪参数或中间跳转。</p>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <div class="scenes" id="scenes">
+      <div class="scene-card">
+        <span class="num">01</span>
+        <h3>信息浏览场景</h3>
+        <p>访问者通过清晰的内容层级快速定位需要的信息，减少界面干扰，提升阅读效率。</p>
+      </div>
+      <div class="scene-card">
+        <span class="num">02</span>
+        <h3>模板参考场景</h3>
+        <p>对于需要快速搭建站点介绍页面的用户，可直接参考本站的代码结构与视觉节奏，节省设计时间。</p>
+      </div>
+      <div class="scene-card">
+        <span class="num">03</span>
+        <h3>轻量部署场景</h3>
+        <p>由于所有代码均包含在一个 HTML 文件中，无需额外依赖，适合部署在 GitHub Pages 等静态托管服务。</p>
+      </div>
+    </div>
+
+    <!-- 常见说明 / FAQ 摘要 -->
+    <section class="faq-summary" id="faq">
+      <h2>常见说明</h2>
+      <div class="faq-item">
+        <h4>本页是否包含动态数据？</h4>
+        <p>不包含。页面完全由静态 HTML + CSS 构成，不加载外部脚本、字体或数据库内容，适合作为信息展示型入口。</p>
+      </div>
+      <div class="faq-item">
+        <h4>为什么选择窄正文宽度？</h4>
+        <p>研究表明，每行 60–75 个字符的宽度最适宜连续阅读。窄正文配合留白能降低视觉疲劳，让用户更专注于内容本身。</p>
+      </div>
+      <div class="faq-item">
+        <h4>关于站点的更新频率</h4>
+        <p>本站不保证固定的更新周期，所有改动均以内容完善或结构优化为目的。建议直接收藏 <a href="https://root-9ysports.com">九游体育</a> 以获取最新版本。</p>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+      <span>© 九游体育 · 站点介绍页 · 简洁专业</span>
+    </footer>
+  </div>
+</body>
+</html>
