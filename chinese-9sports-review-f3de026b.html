@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>九游体育 · 日常赛事查询与对照指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fce9d7 0%, #fbe3cd 30%, #f7d4b5 65%, #f2c8a2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1.2rem;
+            line-height: 1.6;
+            color: #2e241f;
+        }
+
+        .page {
+            max-width: 820px;
+            width: 100%;
+        }
+
+        /* 白色内容卡片 ———— 圆角、柔和阴影、透气内边距 */
+        .card {
+            background: #fffcf9;
+            border-radius: 32px;
+            box-shadow: 0 10px 28px rgba(120, 70, 40, 0.10), 0 4px 12px rgba(0,0,0,0.04);
+            padding: 2.2rem 2rem;
+            margin-bottom: 2rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 14px 34px rgba(100, 60, 30, 0.12), 0 6px 16px rgba(0,0,0,0.05);
+        }
+
+        /* 标题系列 */
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+            color: #3d2b20;
+            margin-bottom: 0.6rem;
+        }
+
+        .subhead {
+            font-size: 1.05rem;
+            color: #6f5543;
+            margin-bottom: 1.8rem;
+            border-left: 4px solid #dbaa7c;
+            padding-left: 1rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #4b3426;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        h2::before {
+            content: "·";
+            color: #c38458;
+            font-weight: 700;
+            font-size: 2rem;
+            line-height: 1;
+            margin-right: 0.2rem;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #543c2c;
+            margin: 1.2rem 0 0.5rem 0;
+        }
+
+        p {
+            margin: 0.8rem 0;
+        }
+
+        /* 按钮感链接（圆角、背景色、hover递进） */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .link-button, a[href*="chinese-9sports"] {
+            display: inline-block;
+            background: #f0e0d2;
+            color: #3d2b1f;
+            padding: 0.15rem 0.9rem;
+            border-radius: 40px;
+            font-weight: 480;
+            transition: background 0.2s, transform 0.1s;
+            border: 1px solid #e6cfbc;
+            box-shadow: 0 2px 4px rgba(120,70,40,0.04);
+        }
+
+        .link-button:hover, a[href*="chinese-9sports"]:hover {
+            background: #e6cdb7;
+            border-color: #d6b69b;
+            transform: translateY(-1px);
+        }
+
+        .link-button:active, a[href*="chinese-9sports"]:active {
+            transform: translateY(1px);
+            background: #dac0aa;
+        }
+
+        /* 特色网格 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0 0.2rem 0;
+        }
+
+        .feature-item {
+            background: #fdf8f3;
+            border-radius: 24px;
+            padding: 1.2rem 1rem;
+            border: 1px solid #f0dfd0;
+        }
+
+        .feature-item strong {
+            display: block;
+            font-weight: 550;
+            color: #4f3829;
+            margin-bottom: 0.3rem;
+            font-size: 1.05rem;
+        }
+
+        .feature-item span {
+            font-size: 0.95rem;
+            color: #5d4637;
+        }
+
+        .scene-block {
+            background: #fcf5ed;
+            border-radius: 28px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.2rem 0;
+        }
+
+        .scene-block p {
+            margin: 0.4rem 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #efe2d6;
+            padding: 0.9rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #4f3829;
+        }
+
+        .faq-a {
+            color: #4d3a2d;
+            margin-top: 0.2rem;
+        }
+
+        .tip-note {
+            background: #e9d6c6;
+            border-radius: 40px;
+            padding: 0.6rem 1.4rem;
+            display: inline-block;
+            font-size: 0.95rem;
+            color: #3d2b1f;
+            margin-top: 0.6rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e9d5c2;
+            margin: 1.6rem 0;
+        }
+
+        .footer-meta {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #7a6353;
+            padding: 1.2rem 0 0.2rem 0;
+            border-top: 1px solid #ead8c7;
+            margin-top: 1.2rem;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 550px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .card {
+                padding: 1.6rem 1.2rem;
+                border-radius: 24px;
+            }
+            h1 {
+                font-size: 1.9rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .scene-block {
+                padding: 1rem 1rem;
+            }
+        }
+
+        /* 让句子中的链接与正文融合 */
+        .inline-link {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 0 0.1rem;
+            color: #7c5b42;
+            font-weight: 480;
+            border-bottom: 1px dashed #c9aa8e;
+            border-radius: 0;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .inline-link:hover {
+            border-bottom: 1px solid #7c5b42;
+            color: #4f3829;
+            background: transparent;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* 保证链接按钮在句子中不破坏行高 */
+        .inline-link-button {
+            background: #f0e0d2;
+            border-radius: 40px;
+            padding: 0.1rem 0.7rem;
+            border: 1px solid #e6cfbc;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- Hero 摘要卡片 -->
+    <div class="card">
+        <h1>九游体育 · 赛事对照与延伸阅读</h1>
+        <div class="subhead">日常查询、比分对照、规则延伸 —— 一个更安静的信息角落</div>
+        <p style="font-size: 1.05rem;">
+            无论是周末想快速确认一场比赛的赛果，还是对某个运动规则产生好奇，很多人习惯先打开一个熟悉、克制的信息源。<a href="https://chinese-9sports.com" class="inline-link inline-link-button">九游体育</a> 提供的正是这样一种日常陪伴：不渲染情绪，不制造紧迫，只是把赛事数据、队伍动态和基础背景整理好，让查询和对照成为顺手的事。
+        </p>
+    </div>
+
+    <!-- 特点 / 亮点卡片 -->
+    <div class="card">
+        <h2>为什么适合日常对照</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>📋 赛事结构清晰</strong>
+                <span>联赛、杯赛、预选赛分层排列，想找某轮次或某小组不用反复跳转。</span>
+            </div>
+            <div class="feature-item">
+                <strong>🔍 对照维度丰富</strong>
+                <span>除了比分，阵容、交手记录、积分变化也能并列浏览，方便延伸判断。</span>
+            </div>
+            <div class="feature-item">
+                <strong>📎 背景说明克制</strong>
+                <span>每项赛事附带简明背景或规则摘要，不堆砌无用信息，适合快速进入。</span>
+            </div>
+        </div>
+        <p style="margin-top: 1.2rem;">
+            这些特性让 <a href="https://chinese-9sports.com" class="inline-link">九游体育</a> 在众多体育站点里显得安静而实用。它没有铺满闪烁的弹窗，也没有强行推送的滚动横幅，更像一个可以随时翻开的参考手册。
+        </p>
+    </div>
+
+    <!-- 使用场景 + 建议 卡片 -->
+    <div class="card">
+        <h2>日常使用场景参考</h2>
+
+        <div class="scene-block">
+            <strong style="color: #4f3829;">🏀 赛前快速查阵容与近况</strong>
+            <p>打开页面后先看「近期交锋」和「状态走势」两个小模块，五分钟就能对两队近期的节奏有个底。不需要登录或关注，直接浏览就能获得对照信息。</p>
+        </div>
+
+        <div class="scene-block">
+            <strong style="color: #4f3829;">⚽ 赛果核对与积分变化</strong>
+            <p>周末比赛密集，用 <a href="https://chinese-9sports.com" class="inline-link inline-link-button">九游体育</a> 对照最终比分和实时积分，比刷社交平台更直接。页面布局偏静态，不会因为自动刷新打乱阅读节奏。</p>
+        </div>
+
+        <div class="scene-block">
+            <strong style="color: #4f3829;">📖 规则或赛制延伸阅读</strong>
+            <p>有些杯赛的晋级规则比较特殊（例如客场进球、加时赛后的点球次序），在赛程页附近一般附有简要说明，适合随手查阅，不需要另外搜索。</p>
+        </div>
+
+        <div class="tip-note">
+            💡 建议搭配宽屏设备使用，表格和多列内容的阅读体验更舒展。
+        </div>
+    </div>
+
+    <!-- FAQ 摘要卡片（轻量问答，不做夸大） -->
+    <div class="card">
+        <h2>常见疑问摘要</h2>
+        <div class="faq-item">
+            <div class="faq-q">Q: 数据更新频率如何？</div>
+            <div class="faq-a">通常赛果在比赛结束后 10~30 分钟内更新，实时数据以页面显示为准。建议对照官方渠道做最终确认。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q: 是否需要注册或付费？</div>
+            <div class="faq-a">不需要。所有赛事浏览、查询、对照功能均免费开放，无需创建账户。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q: 移动端浏览体验如何？</div>
+            <div class="faq-a">页面针对手机做了适配，但部分表格在窄屏下会横向滚动，建议横屏或使用平板获得更好对照效果。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q: 有赛事提醒或推送吗？</div>
+            <div class="faq-a">当前版本没有主动推送机制。页面更适合主动查询场景，而不是被动接收消息。</div>
+        </div>
+        <p style="margin-top: 0.8rem; font-size: 0.95rem; color: #5d4637;">
+            如果你还有其它使用上的疑问，不妨直接在 <a href="https://chinese-9sports.com" class="inline-link">九游体育</a> 内浏览，多数信息都直接展示在对应赛程或队伍页面中。
+        </p>
+    </div>
+
+    <!-- 可信但克制的访问说明卡片 -->
+    <div class="card" style="margin-bottom: 1.2rem;">
+        <h2>关于访问与使用</h2>
+        <p>
+            <a href="https://chinese-9sports.com" class="inline-link inline-link-button">九游体育</a> 是一个以赛事数据查阅和基础信息对照为主的站点。它不收集用户的个人浏览行为，不设置诱导分享或强制跳转。你可以把它当作一个安静的参考工具，用于日常赛果确认、规则回顾或队伍动态延伸。
+        </p>
+        <p>
+            页面中所有信息均来自公开数据或站点自行整理，不构成任何投注建议或决策依据。体育比赛结果具有不可预测性，任何对照信息仅供兴趣参考。如果你发现数据与官方有出入，欢迎通过站内反馈渠道提交，但请理解整理工作可能存在延迟或疏漏。
+        </p>
+        <p style="margin-top: 1rem; background: #f5ece4; border-radius: 32px; padding: 0.8rem 1.2rem;">
+            🌿 保持平常心，享受比赛本身。一个靠谱的查询工具，就是让你更快回到比赛里。
+        </p>
+    </div>
+
+    <!-- 极简 footer -->
+    <div class="footer-meta">
+        <span>九游体育 · 日常赛事对照手册</span><br>
+        <span style="font-size: 0.8rem; opacity: 0.6;">内容仅供个人参考，不构成任何导向性建议</span>
+    </div>
+
+</div>
+</body>
+</html>
