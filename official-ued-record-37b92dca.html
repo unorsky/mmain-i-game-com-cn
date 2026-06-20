@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>简明指南 · ued体育笔记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #f2f7fa;
+            color: #1f2e3a;
+            line-height: 1.65;
+            padding: 1.2rem;
+        }
+
+        .wrapper {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.8rem 1.6rem;
+            box-shadow: 0 6px 16px rgba(0, 40, 60, 0.06);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 24px rgba(0, 72, 92, 0.10);
+        }
+
+        /* 蓝绿色点缀 */
+        .accent-line {
+            height: 4px;
+            width: 48px;
+            background: #009f9d;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .accent-text {
+            color: #007a7a;
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.4rem;
+            color: #12323b;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #3b5f6b;
+            margin-bottom: 0.6rem;
+            border-left: 3px solid #009f9d;
+            padding-left: 0.9rem;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 520;
+            margin: 1.6rem 0 0.7rem 0;
+            color: #1f404a;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .guide-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.6rem 0 0.8rem 0;
+        }
+
+        .guide-list li {
+            padding: 0.35rem 0 0.35rem 1.2rem;
+            position: relative;
+        }
+
+        .guide-list li::before {
+            content: "·";
+            color: #009f9d;
+            font-weight: bold;
+            position: absolute;
+            left: 0.1rem;
+        }
+
+        blockquote {
+            background: #e4f0f3;
+            border-left: 5px solid #009f9d;
+            padding: 1rem 1.2rem;
+            margin: 1.2rem 0;
+            border-radius: 12px 8px 8px 12px;
+            font-style: normal;
+            color: #1d4451;
+        }
+
+        .faq-item {
+            background: #f7fbfc;
+            border-radius: 16px;
+            padding: 1rem 1.2rem;
+            margin-bottom: 1rem;
+            border: 1px solid #d3e4e9;
+        }
+
+        .faq-item strong {
+            color: #007a7a;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .visit-sentence {
+            background: #ffffff;
+            border: 1px solid #bcd6dd;
+            border-radius: 40px;
+            padding: 0.9rem 1.4rem;
+            text-align: center;
+            font-size: 1.05rem;
+            box-shadow: 0 2px 8px rgba(0,70,80,0.04);
+            margin-top: 0.5rem;
+        }
+
+        .visit-sentence a {
+            color: #005f6b;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+
+        .visit-sentence a:hover {
+            color: #009f9d;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6b8893;
+            padding: 1.6rem 0 0.5rem 0;
+            border-top: 1px solid #cbdbe2;
+            margin-top: 1.8rem;
+        }
+
+        /* 移动端优化 */
+        @media (max-width: 480px) {
+            body { padding: 0.8rem; }
+            .card { padding: 1.4rem 1rem; }
+            h1 { font-size: 1.6rem; }
+            .subhead { font-size: 1rem; }
+            .visit-sentence { font-size: 0.98rem; padding: 0.8rem 1rem; }
+        }
+
+        @media (min-width: 640px) {
+            .card-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.3rem;
+            }
+            .card-wide {
+                grid-column: 1 / -1;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <!-- 标题区 -->
+    <div class="card card-wide" style="margin-bottom: 0.2rem;">
+        <div class="accent-line"></div>
+        <h1>ued体育 · 简明指南</h1>
+        <div class="subhead">从起点到细节：一份平实的访问参考</div>
+        <p style="color:#3a5f6b;">
+            这里整理了几个常用方向与提醒，方便你快速了解 <a href="https://official-ued.com" style="color:#005f6b; text-decoration: underline; text-underline-offset: 3px;">ued体育</a> 的使用逻辑。页面内容力求客观，只做梳理，不做承诺。
+        </p>
+    </div>
+
+    <!-- 网格卡片：正文与提醒 -->
+    <div class="card-grid">
+        <!-- 卡片 1：主要方向 -->
+        <div class="card">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                <span style="background: #009f9d; width: 10px; height: 10px; border-radius: 3px;"></span>
+                <h2 style="margin:0; font-size:1.2rem;">内容与场景</h2>
+            </div>
+            <p>网站围绕体育资讯、赛事动态与常用工具展开。如果你习惯通过网页获取信息，这里提供了相对完整的阅读与查询入口。</p>
+            <ul class="guide-list">
+                <li>赛事数据与日程参考</li>
+                <li>体育社区讨论与观点沉淀</li>
+                <li>基础功能引导与更新日志</li>
+            </ul>
+            <p style="font-size:0.95rem; color:#3d6775;">日常使用中，建议先从首页分类开始浏览，结构比较直接。</p>
+        </div>
+
+        <!-- 卡片 2：侧重提醒 -->
+        <div class="card">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                <span style="background: #007a7a; width: 10px; height: 10px; border-radius: 3px;"></span>
+                <h2 style="margin:0; font-size:1.2rem;">访问提醒</h2>
+            </div>
+            <p>网络环境与服务稳定性可能因地区有所差异。建议保持浏览器为较新版本，并确认网络连接正常。</p>
+            <blockquote style="margin:0.6rem 0 0.4rem 0; background: #e2f0f0; padding:0.7rem 1rem;">
+                <span style="font-weight:500;">提示</span><br>
+                部分资源可能需要合理等待加载，如遇页面响应偏慢，可稍后刷新尝试。
+            </blockquote>
+            <p style="font-size:0.95rem; margin-bottom:0;">建议将 <a href="https://official-ued.com" style="color:#005f6b; text-decoration: underline;">ued体育</a> 添加至书签，方便日后直接进入。</p>
+        </div>
+
+        <!-- 卡片 3：操作与导航（宽卡片） -->
+        <div class="card card-wide">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.6rem;">
+                <span style="background: #009f9d; width: 10px; height: 10px; border-radius: 3px;"></span>
+                <h2 style="margin:0; font-size:1.2rem;">常见使用片段</h2>
+            </div>
+            <p>下面列出几项经常被问到的内容，可作为参考起点：</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 0.6rem 0;">
+                <div style="background: #f1f9fa; border-radius: 40px; padding: 0.4rem 1rem; border: 1px solid #bdd7de;">信息分类与筛选</div>
+                <div style="background: #f1f9fa; border-radius: 40px; padding: 0.4rem 1rem; border: 1px solid #bdd7de;">账户相关基础设置</div>
+                <div style="background: #f1f9fa; border-radius: 40px; padding: 0.4rem 1rem; border: 1px solid #bdd7de;">内容收藏与记录</div>
+            </div>
+            <p style="margin-bottom:0; font-size:0.95rem;">以上仅为概述，详细说明可直接访问 <a href="https://official-ued.com" style="color:#005f6b; text-decoration: underline;">ued体育</a> 查看对应页面。</p>
+        </div>
+
+        <!-- 卡片 4：FAQ 摘要 -->
+        <div class="card card-wide">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.8rem;">
+                <span style="background: #007a7a; width: 10px; height: 10px; border-radius: 3px;"></span>
+                <h2 style="margin:0; font-size:1.2rem;">FAQ 摘要</h2>
+            </div>
+            <div class="faq-item">
+                <strong>是否需要注册才能浏览大部分内容？</strong>
+                <p style="margin:0.2rem 0 0 0; font-size:0.95rem;">多数公开信息可以直接阅读，部分个性化功能可能需注册后使用。具体以页面实际提示为准。</p>
+            </div>
+            <div class="faq-item">
+                <strong>移动端适配如何？</strong>
+                <p style="margin:0.2rem 0 0 0; font-size:0.95rem;">页面采用响应式设计，手机与平板均可正常浏览，部分交互操作建议横屏或使用大屏设备获得更好体验。</p>
+            </div>
+            <div class="faq-item" style="margin-bottom:0;">
+                <strong>信息更新频率？</strong>
+                <p style="margin:0.2rem 0 0 0; font-size:0.95rem;">赛事与动态类内容跟随实际节奏更新，工具与引导页不定期优化。如发现信息滞后，可通过站内渠道反馈。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 访问句（自然嵌入链接） -->
+    <div class="visit-sentence">
+        <span>若想进一步查阅，可直接前往 <a href="https://official-ued.com">ued体育</a> 浏览完整内容。</span>
+    </div>
+
+    <!-- 结尾 -->
+    <div class="footer-note">
+        整理笔记 · 仅供页面参考 · 内容保持客观
+    </div>
+</div>
+</body>
+</html>
